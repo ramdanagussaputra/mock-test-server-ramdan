@@ -8,7 +8,7 @@ const app = require('./app');
 dotenv.config(path.join(__dirname, '.env'));
 
 // SETUP DATABASE
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 
 (async () => {
     const DB = process.env.MONGODB_URL.replace(

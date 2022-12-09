@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
         required: [true, 'User must have a password'],
         minLength: [4, 'Password must contains of 4 number'],
         maxLength: [4, 'Password must contains of 4 number'],
+        select: false,
     },
 });
 
