@@ -22,11 +22,11 @@ const sendProdError = (err, res) => {
 
 const errorHandler = (err, _, res, __) => {
     err.status = err.status || 'error';
-    err.statusCode = err.statusCode || '500';
+    err.statusCode = err.statusCode || 500;
 
     if (process.env.NODE_ENV === 'development') return sendDevError(err, res);
 
-    if (process.env.NODE_ENV === 'production') return sendProdError();
+    if (process.env.NODE_ENV === 'production') return sendProdError(err, res);
 };
 
 module.exports = errorHandler;
