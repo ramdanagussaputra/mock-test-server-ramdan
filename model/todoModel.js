@@ -8,13 +8,18 @@ const todoSchema = new mongoose.Schema({
     },
     publishDate: {
         type: Date,
-        min: Date.now(),
+        default: Date.now(),
     },
     targetDate: {
         type: Date,
+        required: [true, 'Todo must have target date'],
         min: Date.now(),
     },
     expired: Boolean,
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
+    },
 });
 
 const Todo = mongoose.model('Todo', todoSchema);

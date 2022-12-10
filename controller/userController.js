@@ -26,7 +26,8 @@ exports.createUser = catchAsync(async (req, res, next) => {
 // GET ONE USER
 exports.getUser = catchAsync(async (req, res, next) => {
     const id = req.params.id;
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate('todos');
+    if (!user) new AppError('User did not exist', 404);
 
     res.status(200).json({
         status: 'success',

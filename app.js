@@ -18,7 +18,7 @@ app.use(express.json());
 
 // Router
 app.use('/api/user', userRouter);
-// app.use('/api/todo', todoRouter);
+app.use('/api/todo', todoRouter);
 
 // Error Handling
 app.use('*', (req, _, next) => {
