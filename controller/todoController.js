@@ -11,7 +11,7 @@ exports.createTodo = catchAsync(async (req, res, next) => {
     };
 
     const todo = await Todo.create(todoInput);
-    if (!todo) new AppError('Invalid todo input', 400);
+    if (!todo) throw new AppError('Invalid todo input', 400);
 
     res.status(200).json({
         status: 'success',
