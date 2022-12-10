@@ -35,3 +35,15 @@ exports.getUser = catchAsync(async (req, res, next) => {
         data: user,
     });
 });
+
+// GET ALL USER
+exports.getUsers = catchAsync(async (req, res, next) => {
+    const user = await User.find({});
+
+    res.status(200).json({
+        status: 'success',
+        message: user.length === 0 ? 'Data empty' : 'Successfuly retrive all user data',
+        result: user.length,
+        data: user,
+    });
+});
