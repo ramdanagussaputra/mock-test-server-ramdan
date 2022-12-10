@@ -19,3 +19,12 @@ exports.createTodo = catchAsync(async (req, res, next) => {
         data: todo,
     });
 });
+
+exports.deleteTodo = catchAsync(async (req, res, next) => {
+    await Todo.findByIdAndDelete(req.params.id);
+
+    res.status(204).json({
+        status: 'success',
+        message: 'Successfully deleted todo',
+    });
+});
