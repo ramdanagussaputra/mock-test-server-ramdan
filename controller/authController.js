@@ -27,12 +27,6 @@ exports.login = catchAsync(async (req, res, next) => {
 
     const token = await signJwt(user._id);
 
-    // res.cookie('jwt', token, {
-    //     expires: new Date(Date.now() + +process.env.JWT_EXPIRE * 24 * 60 * 60 * 1000),
-    //     httpOnly: true,
-    //     secure: req.secure || req.headers['x-fowarded-proto'] === 'https',
-    // });
-
     user.password = undefined;
 
     res.status(200).json({
