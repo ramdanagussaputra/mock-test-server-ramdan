@@ -1,6 +1,7 @@
 // DEPENDENCIES
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const userRouter = require('./router/userRoute');
 const todoRouter = require('./router/todoRoute');
 const AppError = require('./utils/appError');
@@ -10,6 +11,9 @@ const globalErrorHandling = require('./controller/errorController');
 const app = express();
 
 // MIDDLEWARE
+// Cors
+app.use(cors());
+
 // Http logger
 app.use(morgan('dev'));
 
