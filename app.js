@@ -6,6 +6,7 @@ const userRouter = require('./router/userRoute');
 const todoRouter = require('./router/todoRoute');
 const AppError = require('./utils/appError');
 const globalErrorHandling = require('./controller/errorController');
+const cookie = require('cookie-parser');
 
 // SETUP APP
 const app = express();
@@ -19,6 +20,7 @@ app.use(morgan('dev'));
 
 // Body parser
 app.use(express.json());
+app.use(cookie());
 
 // Router
 app.use('/api/user', userRouter);
