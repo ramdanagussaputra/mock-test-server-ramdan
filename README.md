@@ -46,4 +46,4 @@ Runs the server in the development mode in http://localhost:9002.
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder.
+Run the server for production.
