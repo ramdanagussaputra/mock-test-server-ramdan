@@ -1,16 +1,16 @@
 {
     "version": 2,
-    "name": "binar-game",
+    "name": "mock-test-server-ramdan",
     "builds": [
         {
-            "src": "./app.js",
+            "src": "./server.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/app.js"
+            "dest": "/server.js"
         }
     ]
 }
